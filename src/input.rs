@@ -13,14 +13,6 @@ use std::{fs::File, io, io::prelude::*, str::FromStr};
 // Read whole content into memory
 //------------------------------
 
-/// Reads the whole file into a `String`.
-pub fn string(filename: &str) -> io::Result<String> {
-    let mut file = open_file(filename)?;
-    let mut s = String::new();
-    file.read_to_string(&mut s)?;
-    Ok(s)
-}
-
 /// Reads the whole file, parsing each line into `T` and returning a `Vec<T>`.
 ///
 /// User must assume that newline and CRLF bytes are not maintained at the end of the
@@ -166,18 +158,6 @@ pub fn buf_reader(filename: &str) -> io::Result<io::BufReader<File>> {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    #[test]
-    fn test_read_to_string() {
-        assert_eq!(
-            string("test").unwrap(),
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-do eiusmod tempor incididunt ut labore et dolore magnam
-aliquam quaerat voluptatem. Ut enim aeque doleamus animo,
-cum corpore dolemus, fieri tamen permagna accessio potest,
-si aliquod aeternum et infinitum impendere malum nobis."
-        );
-    }
 
     #[test]
     fn test_lines() {
