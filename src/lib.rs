@@ -1,4 +1,4 @@
 pub mod grid;
 pub mod input;
+pub mod pair;
 pub mod parse;
-pub mod point;

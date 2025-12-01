@@ -38,7 +38,7 @@
 
 // use super::base2d::Base2d;
 
-use crate::point::Pair;
+use crate::pair::Pair;
 use std::fmt::Debug;
 use std::ops::{Index, IndexMut};
 
