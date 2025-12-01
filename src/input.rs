@@ -144,9 +144,7 @@ fn open_file(filename: &str) -> Result<File, io::Error> {
 }
 
 /// Returns a buffered reader for the file.
-///
-/// A buffer reader may be used by the user to perform custom parsing of the file.
-pub fn buf_reader(filename: &str) -> io::Result<io::BufReader<File>> {
+fn buf_reader(filename: &str) -> io::Result<io::BufReader<File>> {
     let file = open_file(filename)?;
     Ok(io::BufReader::new(file))
 }
