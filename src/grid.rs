@@ -59,12 +59,11 @@ impl<T: Clone> Grid<T> {
         }
     }
 
-    /// If vector `v` is larger than `len_x` * `len_y`, the extra elements are
-    /// truncated.
+    /// If vector `v` is larger than `len_x` * `len_y`, the extra elements are truncated.
     ///
     /// # Panics
     ///
-    /// - The input vector `v` must have at least `len_x` * `len_y` lenght. Otherwise the
+    /// - The input vector `v` must have at least `len_x` * `len_y` length. Otherwise the
     ///   program may panic while trying to access the elements of the inner vector;
     pub fn from_vec(len_x: usize, len_y: usize, mut v: Vec<T>) -> Grid<T> {
         debug_assert!(v.len() >= len_x * len_y);
